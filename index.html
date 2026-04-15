@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Noto Serif', serif;
+    background: #faf8f3;
+    color: #2c2c2c;
+}
+
+/* COVER */
+#cover {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #faf8f3;
+}
+
+.cover-card {
+    background: linear-gradient(135deg, #fff8e1, #ffe4ec);
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+    border: 2px solid #e8c76a;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.names { font-size: 26px; color: #1a2a4a; }
+.amp { color: #b38b00; }
+.date { font-weight: bold; color: #b38b00; }
+
+.btn {
+    padding: 10px 20px;
+    background: #1a2a4a;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* MAIN */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+.section {
+    margin: 20px 0;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.welcome { background: #fff8e1; }
+.couple { background: #ffe4ec; }
+.events-section { background: #e3f2fd; }
+.gallery { background: #e8f5e9; }
+.footer { background: #f3e5f5; }
+
+.main-title {
+    text-align: center;
+    color: #b38b00;
+}
+
+/* COUPLE PHOTO */
+.couple-photo-wrapper {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 20px;
+}
+
+.couple-photo-border {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border: 3px dashed #e8c76a;
+    border-radius: 50%;
+    animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.couple-photo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #b38b00;
+}
+
+.couple-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* EVENTS */
+.events {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.event {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* GALLERY */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* IMAGE POSITION FIXES */
+.img1 { object-position: center; }
+.img2 { object-position: top center; }
+.img3 { object-position: center center; }
+.img4 { object-position: center; }
+.img5 { object-position: center; }
+.img6 { object-position: center; }
+
+@media (min-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bg-music" loop>
+    <source src="song.mp3.mpeg" type="audio/mpeg">
+</audio>
+
+<!-- COVER -->
+<div id="cover">
+    <div class="cover-card">
+        <h3>💐 Wedding Invitation 💐</h3>
+
+        <p>With the blessings of our family</p>
+
+        <h1 class="names">Nagaraju</h1>
+        <div class="amp">&</div>
+        <h1 class="names">Neelaveni</h1>
+
+        <p>
+            We cordially invite you to our wedding ceremony<br>
+            Kindly grace the occasion and bless the bride & groom 💑
+        </p>
+
+        <p class="date">29 April 2026</p>
+
+        <button class="btn" onclick="openInvite()">Open Invitation</button>
+    </div>
+</div>
+
+<!-- MAIN -->
+<div id="main" style="display:none;" class="container">
+
+<h1 class="main-title">💐 Wedding Invitation 💐</h1>
+
+<div class="section welcome">
+    <p>Auspicious Blessings</p>
+    <h2>Manem Family Wedding Invitation</h2>
+</div>
+
+<!-- COUPLE -->
+<div class="section couple">
+    <div class="couple-photo-wrapper">
+        <div class="couple-photo-border"></div>
+        <div class="couple-photo">
+            <img src="couple.jpg.jpeg">
+        </div>
+    </div>
+
+    <h3>💑 Bride & Groom</h3>
+    <h2>Nagaraju & Neelaveni</h2>
+    <p>"Two souls, one heart"</p>
+</div>
+
+<!-- EVENTS -->
+<div class="section events-section">
+    <div class="events">
+        <div class="event">🪔 Muhurtham – 7:51 PM</div>
+        <div class="event">🕉️ Wedding Venue – Chapara Village</div>
+        <div class="event">🍽️ Lunch – 12:00 PM</div>
+    </div>
+</div>
+
+<!-- GALLERY -->
+<div class="section gallery">
+    <div class="gallery-grid">
+        <img src="01.jpg" class="img1">
+        <img src="02.jpeg" class="img2">
+        <img src="03.jpeg" class="img3">
+        <img src="04.jpeg" class="img4">
+        <img src="05.jpg" class="img5">
+        <img src="06.jpg" class="img6">
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="section footer">
+    <h3>🙏 We request your gracious presence to be part of our joyful moments 🙏</h3>
+</div>
+
+</div>
+
+<script>
+function openInvite(){
+    document.getElementById("bg-music").play().catch(()=>{});
+    document.getElementById("cover").style.display="none";
+    document.getElementById("main").style.display="block";
+}
+</script>
+
+</body>
+</html>
